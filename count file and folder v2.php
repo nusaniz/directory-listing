@@ -47,8 +47,8 @@ body {
 	
 }
 
-.waktu {
-	font-size:xx-small;
+.waktu, #time{
+	font-size:x-small;
 	padding:0.2rem;
 }
 </style>
@@ -109,7 +109,7 @@ function isSiteAvailible($url){
     return $response?true:false;
 }
 
-$URL = 'http://nizarwiki.ga';
+$URL = 'http://weta-nizarwiki.ga';
 
 if(isSiteAvailible($URL)){
     echo '<div class="up back">Hore, website berjalan dengan baik.</div>';      
@@ -117,13 +117,25 @@ if(isSiteAvailible($URL)){
    echo '<div class="down back">Woops, website lagi DOWN nih!</div>'; 
 }
 
-date_default_timezone_set('Asia/Jakarta');
+//date_default_timezone_set('Asia/Jakarta');
 
-$timestamp = time();
-$date_time = date("d-m-Y (D) H:i:s", $timestamp);
-echo "<div class='waktu'>Current date and local time on this server is $date_time</div>";
+//$timestamp = time();
+//$date_time = date("d-m-Y (D) H:i:s", $timestamp);
+//echo "<div class='waktu'>Current date and local time on this server is $date_time</div>";
 ?>
 
+<div id="time"></div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+var timestamp = '<?=time();?>';
+function updateTime(){
+  $('#time').html(Date(timestamp));
+  timestamp++;
+}
+$(function(){
+  setInterval(updateTime, 1000);
+});
+</script>
 </body>
 </html>
