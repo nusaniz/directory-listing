@@ -51,9 +51,18 @@ body {
 	font-size:x-small;
 	padding:0.2rem;
 }
+
+.waktu{
+	font-size:x-small;
+	padding:0.2rem;
+}
+
+
 </style>
 
+
 <?php
+
 
 $myvar = 0;
 $myvar2 = 0;
@@ -122,9 +131,18 @@ if(isSiteAvailible($URL)){
 //$timestamp = time();
 //$date_time = date("d-m-Y (D) H:i:s", $timestamp);
 //echo "<div class='waktu'>Current date and local time on this server is $date_time</div>";
+
+
+//cek lokasi server timezone
+
+$timezone = date_default_timezone_get();
+echo "<div class='waktu'> Loc: $timezone </div>"
+
 ?>
 
 <div id="time"></div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
