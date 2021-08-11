@@ -25,3 +25,5 @@ echo $myvar2;
 ?>
 
 //ubah Dir yang ada di get_list('Dir'); sesuai alamat directory.
+
+//src: https://forums.phpfreaks.com/topic/61730-solved-count-all-files-in-a-directory-and-subdirectory/
